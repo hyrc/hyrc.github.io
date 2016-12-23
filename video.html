@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可惜沒如果</title>
+    <link href="video/video-js.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/cssReser.css">
+    <link rel="stylesheet" href="css/shiyangvideo.css">
+    <style>
+        #vjs_video_3_html5_api{width:100%;}
+    </style>
+    <script src="video/video.js"></script>
+    <script src="js/startmove.js"></script>
+    <script>
+        videojs.options.flash.swf = "video/video-js.swf";
+        if (navigator.userAgent.indexOf('MSIE') >= 0)
+        {
+            document.getElementById("videoDiv").innerHTML='<embed src="Wildlife.mp4" autostart="true" loop="true" width="768" height="470" >';
+        }//如果是IE浏览器就将视频替换为传统的以FLASH形式播放。
+        window.onload=function()
+        {
+            var oShuru=document.getElementById("Shuru");
+            oShuru.onfocus=function()//onfocus是获得焦点时发生的事件
+            {
+                this.value="";
+            }
+            oShuru.onblur=function()//onblur是失去焦点时发生的事件
+            {
+                this.value="请输入搜索内容";
+            }
+
+
+            var Oheadplay=document.getElementById("vjs_video_3_html5_api") ;
+            var OheadDiv=Oheadplay.getElementsByTagName("div");
+            for(var i=0;i<OheadDiv.length;i++)
+            {
+                OheadDiv[i].style.display="none";
+            }
+            var OVideo=document.getElementById("my_video_1_html5_api");
+            // OVideo.controls=false;
+            // Omyvideo.style.controls="false";
+
+
+
+            var Osmall=document.getElementById("small");
+            var Omyvideo=document.getElementById("my_video_1");
+            var Oxuanji=document.getElementById("xuanji");
+            var Osmall2=document.getElementById("small2");
+            var Omingzi=document.getElementById("mingzi");
+            Osmall.onclick=function()
+            {
+                Omingzi.style.display="none";
+                Oxuanji.style.width=200+"px";
+                Oxuanji.style.left=968+"px";
+                Omyvideo.style.marginLeft=200+"px";
+                Osmall.style.display="none";
+                Osmall2.style.display="block";
+
+            }
+            Osmall2.onclick=function()
+            {
+                Oxuanji.style.width=400+"px";
+                Oxuanji.style.left=768+"px";
+                Omyvideo.style.marginLeft=0+"px";
+                Osmall.style.display="block";
+                Osmall2.style.display="none";
+                Omingzi.style.display="block";
+            }
+
+            var Ovideo=document.getElementById("my_video_1");
+            var Ovsj=Ovideo.getElementsByTagName("div")[4];
+            Ovsj.style.top=380+"px";
+
+
+
+            var Omz=document.getElementById("Mz");
+            var Oxiangxi=document.getElementById("Xiangxi");
+            var Ojuji=document.getElementById("juji");
+            var timer=null;
+            Oxiangxi.onmouseover=Omz.onmouseover=function()
+            {
+                clearTimeout(timer);
+                Oxiangxi.style.display="block"
+                Ojuji.style.display="none";
+            }
+            Oxiangxi.onmouseout=Omz.onmouseout=function()
+            {
+                timer=setTimeout(function(){
+                    Oxiangxi.style.display="none"
+                    Ojuji.style.display="block";
+                },500);
+                //setTimeout(code,millisec)code  必需。要调用的函数后要执行的 JavaScript 代码串。millisec 必需。在执行代码前需等待的毫秒数。
+            }
+
+            var OFd=document.getElementById("F-d");
+            var Ofd=document.getElementById("f-d");
+            var OFda=document.getElementById("F-da");
+            var ORIGHT=document.getElementById("f-RIGHT");
+            var OFwenzi=document.getElementById("f-wenzi");
+            var timer=null;
+            function taa()
+            {
+                clearTimeout(timer);
+                OFda.style.display="block"
+                ORIGHT.style.background="#fff";
+                OFwenzi.style.color="#f60";
+            }
+            function tbb()
+            {
+                timer=setTimeout(function(){
+                    OFda.style.display="none";
+                    ORIGHT.style.background="#f4f7f6";
+                    OFwenzi.style.color="black";
+                },500)
+            }
+            OFwenzi.onmouseover=function()
+            {
+                OFwenzi.style.color="#f60";
+            }
+            OFwenzi.onmouseout=function()
+            {
+                OFwenzi.style.color="black";
+            }
+            OFwenzi.onclick=function()
+            {
+                taa();
+                OFwenzi.onclick=function()
+                {
+                    if(OFda.style.display=="block")
+                    {
+                        tbb();
+                    }
+                    else
+                    {
+                        taa();
+                    }
+                }
+
+            }
+            OFda.onmouseover=Ofd.onmouseover=OFd.onmouseover=function()
+            {
+                taa()
+            }
+            OFda.onmouseout=OFd.onmouseout=function()
+            {
+                tbb()
+            }
+
+
+
+            var OJT=document.getElementById("JT");
+            var OJishu=document.getElementById("Jishu");
+            var OJa=OJishu.getElementsByTagName("a");
+            var OJDiv=OJT.getElementsByTagName("div");
+            for(var i=0;i<OJa.length;i++)
+            {
+
+                OJa[i].index=i;
+                OJa[i].onmouseover=function()
+                {
+                    var Ta=this.index;
+                    for(var i=0;i<OJa.length;i++)
+                    {
+                        OJa[i].style.color="white";
+                        OJa[i].style.borderColor="white";
+                        OJa[i].onmouseout=function()
+                        {
+                            this.style.color="white";
+                            this.style.borderColor="white";
+                        }
+                    }
+                    this.style.color="#f60";
+                    this.style.borderColor="#f60";
+                }
+                OJa[i].onclick=function()
+                {
+                    var Ta=this.index;
+                    for(var i=0;i<OJa.length;i++)
+                    {
+                        OJa[i].style.color="white";
+                        OJa[i].style.borderColor="white";
+                        OJa[i].onmouseout=function()
+                        {
+                            if(this.index==Ta)
+                            {
+                                for(var i=0;i<OJa.length;i++)
+                                {
+                                    OJa[i].style.color="white";
+                                    OJa[i].style.borderColor="white";
+                                }
+                                this.style.color="#f60";
+                                this.style.borderColor="#f60";
+                            }
+                            else
+                            {
+                                this.style.color="white";
+                                this.style.borderColor="white";
+                            }
+                        }
+                        OJa[i].onmouseover=function()
+                        {
+                            for(var i=0;i<OJa.length;i++)
+                            {
+                                OJa[i].style.color="white";
+                                OJa[i].style.borderColor="white";
+                            }
+                            this.style.color="#f60";
+                            this.style.borderColor="#f60";
+                            OJa[Ta].style.color="#f60";
+                            OJa[Ta].style.borderColor="#f60";
+                        }
+                    }
+                    this.style.color="#f60";
+                    this.style.borderColor="#f60";
+                    for(var i=0;i<OJDiv.length;i++)
+                    {
+                        OJDiv[i].style.display="none";
+                        OJDiv[i].className="";
+
+                    }
+                    OJDiv[this.index].style.display="block";
+                    OJDiv[this.index].className="juti0";
+                }
+            }
+
+
+
+
+            var  OTui=document.getElementById("XGtui");
+            var OTuiUl=OTui.getElementsByTagName("ul")[0];
+            var OXGleft=document.getElementById("XGleft");
+            var OXGright=document.getElementById("XGright");
+            OTuiUl.innerHTML=OTuiUl.innerHTML+OTuiUl.innerHTML;
+            OTuiUl.style.width=OTuiUl.offsetWidth*2+"px";
+            var timer=setInterval(move, 30);
+            var speed=-2
+            function move()
+            {
+                if(OTuiUl.offsetLeft<-OTuiUl.offsetWidth/2)
+                {
+                    OTuiUl.style.left=0+"px";
+                }
+                if(OTuiUl.offsetLeft>0)
+                {
+                    OTuiUl.style.left=-OTuiUl.offsetWidth/2+"px";
+                }
+                OTuiUl.style.left=OTuiUl.offsetLeft+speed+"px";
+            }
+            OTuiUl.onmouseover=function()
+            {
+                clearInterval(timer);
+            }
+            OTuiUl.onmouseout=function()
+            {
+                timer=setInterval(move,30);
+            }
+            OXGleft.onclick=function()
+            {
+                speed=-2;
+                OXGleft.onclick=function()
+                {
+                    speed=-4;
+                    OXGleft.onclick=function()
+                    {
+                        speed=-8;
+                        OXGleft.onclick=function()
+                        {
+                            speed=-2;
+                        }
+                    }
+                }
+            }
+            OXGright.onclick=function()
+            {
+                speed=2;
+                OXGright.onclick=function()
+                {
+                    speed=4;
+                    OXGright.onclick=function()
+                    {
+                        speed=8;
+                        OXGright.onclick=function()
+                        {
+                            speed=2;
+                        }
+                    }
+                }
+            }
+
+            OTuiUl.onmousedown=function(ev)
+            {
+                clearInterval(timer);
+                var oEvent=ev||event;
+                var LL=OTuiUl.offsetLeft;
+                var L=oEvent.clientX-100;
+                var W=document.documentElement.clientWidth||window.innerWidth;
+                document.onmousemove=function(ev)
+                {
+                    var oEvent=ev||event;
+                    OTuiUl.style.left=LL-oEvent.clientX-L+"px";
+                    if(OTuiUl.offsetLeft<-OTuiUl.offsetWidth||OTuiUl.offsetLeft>0)
+                    {
+                        OTuiUl.style.left=0+"px";
+                    }
+                    else
+                    {
+                        OTuiUl.style.left=LL-oEvent.clientX-L+"px";
+                    }
+                }
+                return false;
+            }
+            document.onmouseup=function(ev)
+            {
+                var oEvent=ev||event;
+                document.onmousemove=null;
+            }
+
+            var OBoFang=document.getElementById("BoFang");
+            var OJuTi=document.getElementById("Juti");
+            var OJul=OJuTi.getElementsByTagName("ul");
+            var OBoFang1=document.getElementById("my_video_1_html5_api");
+            var Otitlemz=document.getElementById("titlemz");
+            for(var i=0;i<OJul.length;i++)
+            {
+                var M0=OBoFang.attributes["src"].nodeValue;
+                var M1=M0.substring(0,12);//M4.substring(0,15)截取的是0到15index之前的字符(不包括15index)。M4.substring(0+15)截取掉从0index开始一直到15index之间的字符，保留15index之后的字符(不包括15index)
+
+                var M2=M0.substring(0+17);
+                // var M3=".mp4";
+
+                OJul[i].index=i;
+                OJul[i].onclick=function()
+                {
+                    OBoFang.src="";
+                    var Murl=this.getElementsByTagName("a")[0].attributes["src"].nodeValue;
+                    var M4=M1+Murl+M2
+                    OBoFang.attributes["src"].nodeValue=M4;
+                    OBoFang1.attributes["src"].nodeValue=M4;
+                    Otitlemz.innerHTML=Murl;
+                    // alert(M4);
+
+                }
+            }
+
+
+
+            var OFufu=document.getElementById("fu-fu");
+            var OKWenzi=document.getElementById("kuan-text");
+
+            OKWenzi.onfocus=function()
+            {
+                OFufu.style.borderColor="#b1c1ff";
+                // setCursorPosition(OKWenzi, 0, 0);
+            }
+            OKWenzi.onblur=function()
+            {
+                OFufu.style.borderColor="#e5e9ef";
+            }
+
+            // function setCursorPosition(t, s, z){
+            //       if(document.selection)
+            //       {
+            //           var range = t.createTextRange();
+            //           range.moveStart('character', s);
+            //           range.moveEnd('character', z);
+            //           range.moveEnd('character', -t.value.length);
+
+
+            //           range.select();
+            //       }
+            //       else
+            //       {
+            //           t.setSelectionRange(s,z);
+            //           t.focus();
+            //       }
+            //   }
+
+
+
+
+            var Obtn=document.getElementById("btn");
+            var OFabuUl=document.getElementById("fabu-ul");
+            var OKuanText=document.getElementById("kuan-text");
+            var OFabuLi=document.getElementById("fabu-li");
+            Obtn.onclick=function()
+            {
+                var oLi=document.createElement("li");
+
+                var Odiv=oLi.getElementsByTagName("div")[1]=document.createElement("div");
+                OFabuUl.appendChild(oLi);
+                oLi.innerHTML=OFabuLi.innerHTML
+                oLi.getElementsByTagName("div")[1].innerHTML=""
+                oLi.getElementsByTagName("div")[1].innerHTML=OKuanText.value;
+                OKuanText.value="";
+                // alert(oLi.getElementsByTagName("div")[1].innerHTML)
+                // if(OFabuUl.children.length>0)
+                // {
+                //    OFabuUl.insertBefore(oLi, OFabuUl.children[0]);
+                // }
+                // else
+                // {
+                //    OFabuUl.appendChild(oLi);
+                // }
+                var gaoDu=85+oLi.getElementsByTagName("div")[1].offsetHeight;
+                oLi.style.height="0";
+                startMove(oLi,{height:gaoDu},function(){
+                    startMove(oLi,{opacity:100});
+                });
+                // alert(gaoDu);
+            }
+            //取消自带播放器插件
+            // var Ovideo=document.getElementById("myvideo");
+            // Ovideo.controls=false;
+            // var playpause=document.getElementById("playpause");
+
+            // function togglePlayPause()
+            // {
+
+            //     if(Ovideo.paused || Ovideo.ended)
+            //     {
+            //         playpause.title="pause";
+            //         playpause.innerHTML="pause";
+            //         Ovideo.play();
+            //     }
+            //     else
+            //     {
+            //         playpause.title="play";
+            //         playpause.innerHTML="play";
+            //         Ovideo.pause();
+            //     }
+            // }
+            // playpause.onclick=function()
+            // {
+            //     togglePlayPause()
+            // }
+
+            // var volume=document.getElementById("volume");
+            // var  mute=document.getElementById("mute");
+
+            // function setVolume()
+            // {
+
+            //    Ovideo.volume=volume.value;
+
+            // }
+            // volume.onchange=function()
+            // {
+            //     Ovideo.volume=volume.value;
+            // }
+            // mute.onclick=function()
+            // {
+            //     Ovideo.muted=!Ovideo.muted;
+            // }
+            // function updateProgress()
+            // {
+            //     var progress=document.getElementById("progress");
+            //     var value=0;
+            //     if(Ovideo.currentTime>0)
+            //     {
+            //         value=Math.floor((100/Ovideo.duration)*Ovideo.currentTime)
+            //     }
+            //     progress.style.width=value +"%";
+
+
+            //     Ovideo.addEventListener("timeupdate", updateProgress, false);
+            //     Ovideo.assEventListener("play",function(){
+            //         playpause.title="pause";
+            //         playpause.innerHTML="pause";
+            //     },false);
+
+            //     Ovideo.assEventListener("pause",function(){
+            //         playpause.title="play";
+            //         playpause.innerHTML="play";
+            //     },false);
+
+            //     Ovideo.assEventListener("ended",function(){
+            //         this.pause();
+            //     },false);
+            // }
+        }
+    </script>
+</head>
+<body>
+<div class="head" id="head">
+    <div class="head-tu">
+        <img src="image3/video/16.jpg" alt="">
+    </div>
+    <div class="head-weizhi">
+        <div class="head-logo">
+            <a href="javascript:;" class="head-logo-a"></a>
+        </div>
+        <div class="head-title">
+            <a href="yudi.html" target="_blank">首页</a>
+            <a href="ziyuan.html" target="_blank">家园</a>
+            <a href="tupian2.html" target="_blank">图片</a>
+            <a href="http://tieba.baidu.com/f?kw=%BB%C3%D2%ED%C8%BE%B3%BE&fr=index" target="_blank">贴吧</a>
+        </div>
+        <div class="head-search">
+            <form action="">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" class="shuru" id="Shuru" value="请输入搜索内容">
+                        </td>
+                        <td class="head-search-tu">
+                            <a href="javascript:;" class="tu">视频</a>
+                        </td>
+                        <td class="head-search-sou">
+                            <a href="javascript:;" class="sou"></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="head-qita"></div>
+    </div>
+</div>
+<div class="hole">
+    <div class="headplay">
+        <video src="" autoplay loop   width="100%"height="470"poster=""    data-setup="{}">
+            <source src="big-v8.mp4" type='video/mp4' >
+        </video>
+    </div>
+    <div class="Title">
+        <a href="">
+            <h1>MV</h1>
+        </a>
+    </div>
+    <div class="Play"><!--  autoplay 如果出现该属性，则视频在就绪后马上播放.   controls 如果出现该属性，则向用户显示控件，比如播放按钮。pixels 设置视频播放器的高度。 loop  如果出现该属性，则当媒介文件完成播放后再次开始播放。 pixels   设置视频播放器的宽度。 -->
+        <video id="my_video_1" class="video-js vjs-default-skin" controls  autoplay  preload="auto"width="768"height="470"poster=""    data-setup="{}">
+            <source src="F:\FFOutput\可惜沒如果.mp4" type='video/mp4' id="BoFang">
+            <!-- <source src="F:\北京遇上西雅图之不二情书HD国语中英双字.ogg" type='video/ogg' id="BoFang">
+            <source src="F:\北京遇上西雅图之不二情书HD国语中英双字.webm" type='video/webm' id="BoFang">
+            <source src="F:\北京遇上西雅图之不二情书HD国语中英双字.MPEG4" type='video/MPEG4' id="BoFang">  -->
+        </video>
+
+        <!-- <embed src="http://www.tudou.com/a/mvFYHSakocg/&bid=05&iid=133010671&rpid=337219966&resourceId=337219966_05_05_99&autoPlay=true/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="768" height="470">
+        </embed> -->
+
+
+
+
+
+        <div class="xuanji" id="xuanji">
+            <div class="mingzi" id="mingzi">
+                <div class="mz" id="Mz">
+                    <a href="javascript:;" target="_blank" id="titlemz">可惜没如果</a>
+                    <div class="xiala">
+                        <div class="xiala0"></div>
+                        <div class="xiala1"></div>
+                    </div>
+                </div>
+                <div class="jishu" id="Jishu">
+                    <a href="javascript:;">选集</a>
+                    <a href="javascript:;">弹幕</a>
+                    <a href="javascript:;">相关</a>
+                </div>
+                <div class="JuTi" id="JT">
+                    <div class="juti juti0" id="Juti">
+                        <ul id="juji">
+                            <!-- <img src="孙丹菲-Queen" alt=""> -->
+                            <a href="javascript:;" src="孙丹菲-Queen">
+                                孙丹菲-Queen
+                            </a>
+                        </ul>
+                        <ul>
+                            <!-- <img src="sun" alt=""> -->
+                            <a href="javascript:;" src="思念你1">
+                                思念你1
+                            </a>
+                        </ul>
+                        <ul>
+                            <!-- <img src="孙丹菲 - Bad Boy" alt=""> -->
+                            <a href="javascript:;" src="孙丹菲 - Bad Boy">
+                                孙丹菲 - Bad Boy
+                            </a>
+                        </ul>
+                        <ul>
+                            <!-- <img src="思念你" alt=""> -->
+                            <a href="javascript:;" src="AOA - 短裙">
+                                AOA - 短裙
+                            </a>
+                        </ul>
+                        <ul>
+                            <!-- <img src="裴涩琪-因为是女子" alt=""> -->
+                            <a href="javascript:;" src="裴涩琪-因为是女子">
+                                裴涩琪-因为是女子
+                            </a>
+                        </ul>
+                        <ul>
+                            <!-- <img src="裴涩琪- 坚强的女人" alt=""> -->
+                            <a href="javascript:;" src="裴涩琪- 坚强的女人">
+                                裴涩琪- 坚强的女人
+                            </a>
+                        </ul>
+                        <ul>
+                            <!-- <img src="Ma Boy 主-多顺 饭拍版" alt=""> -->
+                            <a href="javascript:;" src="Ma Boy 主-多顺 饭拍版">
+                                Ma Boy 主-多顺 饭拍版
+                            </a>
+                        </ul>
+                        <ul>
+                            <!-- <img src="T-ARA $ Sexy Love" alt=""> -->
+                            <a href="javascript:;" src="T-ARA $ Sexy Love">
+                                T-ARA $ Sexy Love
+                            </a>
+                        </ul>
+                        <ul>
+                            <!-- <img src="Rainbow - Tell Me Tell Me" alt=""> -->
+                            <a href="javascript:;" src="Rainbow - Tell Me Tell Me">
+                                Rainbow - Tell Me Tell Me
+                            </a>
+                        </ul>
+                        <ul>
+                            <!-- <img src="miss A - Bad Girl Good Girl" alt=""> -->
+                            <a href="javascript:;" src="miss A - Bad Girl Good Girl">
+                                miss A - Bad Girl Good Girl
+                            </a>
+                        </ul>
+                        <ul>
+                            <!-- <img src="Sugar-Heartful" alt=""> -->
+                            <a href="javascript:;" src="Sugar-Heartful">
+                                Sugar-Heartful
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="juti" >
+                        <ul id="juji">
+                            <a href="javascript:;">
+                                弹幕：
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="juti" >
+                        <ul id="juji">
+                            <a href="javascript:;">
+                                相关：
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="qita">
+                    <div class="qita0"></div>
+                    <div class="qita1"></div>
+                </div>
+                <div class="xiangxi" id="Xiangxi">
+                    <p>
+                        类型：
+                        <a href="">清新</a>
+                        <a href="">流行</a>
+                    </p>
+                    <p>《可惜没如果》由林夕填词，蔡政勋编曲，林俊杰谱曲并演唱，该歌曲于2014年12月19日首发,收录在林俊杰第11张个人专辑《新地球GENESIS》中</p>
+                </div>
+            </div>
+            <div class="small" id="small">
+                <div class="nu1"></div>
+                <div class="nu2"></div>
+            </div>
+            <div class="small2" id="small2">
+                <span class="zhankai">点我展开选集</span>
+            </div>
+        </div>
+    </div>
+    <div class="jdt"></div>
+    <div class="floor">
+        <div class="f-left">
+            <div>
+                <a href="javascript:;" target="_blank" class="L0"></a>
+                <span>下载</span>
+            </div>
+            <div>
+                <a href="javascript:;" target="_blank" class="L1"></a>
+                <span>推荐</span>
+            </div>
+            <div>
+                <a href="javascript:;" target="_blank" class="L2"></a>
+                <span>发现</span>
+            </div>
+            <div>
+                <a href="javascript:;" target="_blank" class="L3"></a>
+                <span>评论</span>
+            </div>
+        </div>
+        <div class="f-right" id="f-RIGHT">
+            <span id="f-wenzi">分享</span>
+            <a href="" target="_blank"  class="R0"></a>
+            <a href="" target="_blank"  class="R1"></a>
+            <a href="" target="_blank"  class="R2"></a>
+            <a href="" target="_blank"  class="R3"></a>
+            <a href="" target="_blank"  class="R4"></a>
+            <a href="" id="F-d"  class="F-d">
+                <div class="f-d" id="f-d">
+                    <div class="d0"></div>
+                    <div class="d1"></div>
+                </div>
+            </a>
+            <div class="f-da" id="F-da">
+                <a href="" target="_blank"  class="F0"></a>
+                <a href="" target="_blank"  class="F1"></a>
+                <a href="" target="_blank"  class="F2"></a>
+                <a href="" target="_blank"  class="F3"></a>
+                <a href="" target="_blank"  class="F4"></a>
+                <a href="" target="_blank"  class="F5"></a>
+                <a href="" target="_blank"  class="F6"></a>
+                <a href="" target="_blank"  class="F7"></a>
+            </div>
+        </div>
+    </div>
+    <div class="videoInformation" id="VideoIn">
+        <img src="image3/video/15.jpg" alt="">
+        <ul>
+            <li>
+                <p class="videop0">视频信息：</p>
+                <p class="videop1">《可惜没如果》由林夕填词，蔡政勋编曲，林俊杰谱曲并演唱，该歌曲于2014年12月19日首发,收录在林俊杰第11张个人专辑《新地球GENESIS》中。
+                </p>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="else">
+        <div class="xiangguang">
+            <img src="image3/video/22.jpg" alt="">
+            <div class="XG">
+                <div class="XGTitle">
+                    <ul>
+                        <li>
+                            同类发现
+                        </li>
+                        <li>
+
+                        </li>
+                        <li>
+
+                        </li>
+                        <li>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="XGTui" id="XGtui">
+                    <div>
+                        <ul>
+                            <li>
+                                <img src="image3/video/0.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/1.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/2.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/3.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/4.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/5.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/6.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/7.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/8.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/9.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/10.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/11.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/12.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/13.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="image3/video/14.jpg" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="XGqiehuan0" id="XGleft">
+                        <div class="qi0"></div>
+                        <div class="qi1"></div>
+                    </div>
+                    <div class="XGqiehuan1" id="XGright">
+                        <div class="qi2"></div>
+                        <div class="qi3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="message"></div>
+        </div>
+    </div>
+    <div class="fabu">
+        <div class="fabu-tu">
+            <img src="image3/video/17.jpg" alt="">
+        </div>
+        <div class="fabu-left">
+            <div class="fabu-shuru">
+                <div class="IDtu"></div>
+                <div class="shuru-fu" id="fu-fu"></div>
+                <div class="shuru-kuang">
+               <textarea name="" id="kuan-text" class="kuang-wenzi" value="">
+               </textarea>
+                    <div class="kuang-tu">
+                        <input type="button" value="发布" id="btn">
+                    </div>
+                </div>
+            </div>
+            <div class="fabu-title">
+                <a href="javascript">
+                    所有评论
+                </a>
+            </div>
+            <div class="fabu-pinglun">
+                <div class="fabu-shuaxin">
+                    <a href="javascript:;">
+                        有新评论，刷新试试！
+                    </a>
+                </div>
+                <div class="fabu-new">
+                    <span>最新</span>
+                    <span>最热</span>
+                </div>
+                <div class="fabu-nerong">
+                    <ul id="fabu-ul">
+                        <li id="fabu-li">
+                            <div class="user"></div>
+                            <p class="fix">
+                                <a href="">ID的名字</a>
+                                <span>时间</span>
+                            </p>
+                            <div class="content">
+                                说点什么
+                            </div>
+                            <p class="fangdui">
+                                <a href="">回复</a>
+                                <a href="">反对</a>
+                                <a href="">支持</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="fabu-right">
+        <p class="tuijian">相关推荐</p>
+        <ul>
+        <li>
+        <div class="tui-tu">
+        <img src="image3\0.jpg" alt="">
+        </div>
+        <div class="tui-wenzi">
+        这里是文字说明
+        </div>
+        </li>
+        <li>
+        <div class="tui-tu">
+        <img src="image3\1.jpg" alt="">
+        </div>
+        <div class="tui-wenzi">
+        这里是文字说明
+        </div>
+        </li>
+        <li>
+        <div class="tui-tu">
+        <img src="image3\2.jpg" alt="">
+        </div>
+        <div class="tui-wenzi">
+        这里是文字说明
+        </div>
+        </li>
+        <li>
+        <div class="tui-tu">
+        <img src="image3\3.jpg" alt="">
+        </div>
+        <div class="tui-wenzi">
+        这里是文字说明
+        </div>
+        </li>
+        <li>
+        <div class="tui-tu">
+        <img src="image3\4.jpg" alt="">
+        </div>
+        <div class="tui-wenzi">
+        这里是文字说明
+        </div>
+        </li>
+        <li>
+        <div class="tui-tu">
+        <img src="image3\5.jpg" alt="">
+        </div>
+        <div class="tui-wenzi">
+        这里是文字说明
+        </div>
+        </li>
+        </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
